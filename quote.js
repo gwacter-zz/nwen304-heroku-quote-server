@@ -46,7 +46,7 @@ app.post('/quote', function(req, res) {
   quotes.push(newQuote);
   // should send back the location at this point
   console.log("Added!");
-  newQuote.pos = quotes.length;
+  newQuote.pos = quotes.length-1;
   res.send(newQuote);
 });
 
