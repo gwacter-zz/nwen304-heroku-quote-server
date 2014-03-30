@@ -62,7 +62,7 @@ $(document).bind('pageinit', function() {
     var jsonUrl = "http://gentle-escarpment-3329.herokuapp.com/quote";
     var newQuote = { "author" : "foo", "text" : "some text" };
     $.post(jsonUrl,newQuote, function(data) {
-      alert("Added " + data.author + " " + data.text);
+      alert("Added " + data.pos + " " + data.author + " " + data.text);
     }, 'json');
   });
 
