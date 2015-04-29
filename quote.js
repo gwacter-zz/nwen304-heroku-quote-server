@@ -1,5 +1,8 @@
 var express = require('express');
-var app = express();
+
+// added cors
+var app = express()
+   , cors = require('cors');
 
 var quotes = [
   { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
@@ -12,8 +15,8 @@ var quotes = [
 app.use(express.bodyParser());
 // serve up files from this directory 
 app.use(express.static(__dirname));
-// if not able to serve up a static file try and handle as REST invocation
-app.use(app.router);
+// make sure we use CORS to avoid cross domain problems
+app.use(cors());
 
 app.get('/quote/random', function(req, res) {
   var id = Math.floor(Math.random() * quotes.length);
