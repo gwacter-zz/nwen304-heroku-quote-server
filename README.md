@@ -1,4 +1,5 @@
-# nwen304-2014-lab2-exercise
+# nwen304/mddn352 studio exercise
+
 Very simple quote node.js server that allows users to add and retrieve quotes using a simple RESTful interface.
 
-Developed for the 2014 edition of the course.
+Includes html for the client as well as the code for the server side.
