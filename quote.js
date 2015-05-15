@@ -1,8 +1,14 @@
+// use the express middleware
 var express = require('express');
 
-// added cors
-var app = express()
-   , cors = require('cors');
+// make express handle JSON and other requests
+var bodyParser = require('body-parser');
+
+// use cross origin resource sharing
+var cors = require('cors');
+
+// instantiate app
+var app = express();
 
 var quotes = [
   { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
@@ -11,8 +17,9 @@ var quotes = [
   { author : 'Neale Donald Walsch', text : "You are afraid to die, and you’re afraid to live. What a way to exist."}
 ];
 
-// make express handle JSON and other requests
-app.use(express.bodyParser());
+// make sure we can parse JSON
+app.use(bodyParser.json());
+
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
