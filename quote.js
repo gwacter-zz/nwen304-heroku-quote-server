@@ -2,7 +2,6 @@
 var express = require('express');
 
 // make express handle JSON and other requests
-var bodyParser = require(bodyParser.urlencoded());
 var bodyParser = require('body-parser');
 
 // use cross origin resource sharing
@@ -18,7 +17,8 @@ var quotes = [
   { author : 'Neale Donald Walsch', text : "You are afraid to die, and you’re afraid to live. What a way to exist."}
 ];
 
-// make sure we can parse JSON
+// make sure we can parse JSON passed in the body or encoded into url
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 // serve up files from this directory 
