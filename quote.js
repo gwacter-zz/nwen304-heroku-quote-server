@@ -26,6 +26,10 @@ app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
 app.use(cors());
 
+app.get('/quote/all', function(req,res) {
+    console.log("quote all called");
+});
+
 app.get('/quote/random', function(req, res) {
   var id = Math.floor(Math.random() * quotes.length);
   var q = quotes[id];
