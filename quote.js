@@ -2,6 +2,7 @@
 var express = require('express');
 
 // make express handle JSON and other requests
+var bodyParser = require(bodyParser.urlencoded());
 var bodyParser = require('body-parser');
 
 // use cross origin resource sharing
