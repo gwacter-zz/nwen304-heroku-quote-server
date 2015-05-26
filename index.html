@@ -61,7 +61,8 @@ $(document).bind('pageinit', function() {
     alert("Posting a new quote");
     var jsonUrl = "https://arcane-sands-5903.herokuapp.com/quote";
     var newQuote = { "author" : "foo", "text" : "some text" };
-    $.post(jsonUrl,newQuote, function(data) {
+    $.post({contentType: "application/json; charset=utf-8"});
+    $.post(jsonUrl, newQuote, function(data) {
       alert("Added quote number " + data.pos + " " + data.author + " " + data.text);
     }, 'json');
   });
