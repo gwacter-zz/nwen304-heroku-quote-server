@@ -27,7 +27,8 @@ app.use(express.static(__dirname));
 app.use(cors());
 
 app.get('/quote/all', function(req,res) {
-    console.log("quote all called");
+  console.log("quote all called");
+  res.send(q);
 });
 
 app.get('/quote/random', function(req, res) {
