@@ -28,7 +28,7 @@ app.use(cors());
 
 app.get('/quote/all', function(req,res) {
   console.log("quote all called");
-  res.send(q);
+  res.send("quote all called");
 });
 
 app.get('/quote/random', function(req, res) {
